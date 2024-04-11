@@ -1,0 +1,71 @@
+<form
+  [formGroup]="authForm"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col lg:w-1/3 mx-auto p-4 mt-20 rounded border border-slate-600 gap-5"
+>
+  <h1 class="text-center">Login</h1>
+  <div class="flex flex-col">
+    <label for="email" class="text-slate-400 text-sm mb-1">Email</label>
+    <input
+      type="email"
+      id="email"
+      placeholder="email"
+      formControlName="email"
+      class="input"
+    />
+    <div
+      *ngIf="
+        !authForm.controls['email'].valid &&
+        authForm.controls['email'].dirty &&
+        authForm.controls['email'].value != ''
+      "
+      class="text-sm text-blue-200"
+    >
+      Insert a valid e-mail address
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <label for="password" class="text-slate-400 text-sm mb-1">Password</label>
+    <input
+      type="password"
+      id="password"
+      placeholder="password"
+      formControlName="password"
+      class="input"
+    />
+    <div
+      *ngIf="
+        !authForm.controls['password'].valid &&
+        authForm.controls['password'].dirty &&
+        authForm.controls['password'].value != ''
+      "
+      class="text-sm text-blue-200"
+    >
+      Insert a valid password (min 6 characters)
+    </div>
+  </div>
+  <div class="grid grid-cols-2">
+    <div class="flex justify-start align-middle">
+      <label for="saveAuth" class="text-slate-400 text-sm"
+        >Stay connected</label
+      >
+      <input
+        class="w-5 h-5 ml-1 text-blue-600 focus:ring-2 cursor-pointer"
+        id="saveAuth"
+        type="checkbox"
+        formControlName="saveUser"
+        label="Save user"
+      />
+    </div>
+    <div class="flex items-center mt-5 gap-4 justify-end">
+      <button
+        class="btn btn-green"
+        type="submit"
+        [disabled]="!this.authForm.valid"
+      >
+        Login
+      </button>
+      <button class="btn btn-red" (click)="cancelForm()">Reset</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,67 @@
+<div class="grid gap-3 mb-5 rounded shadow">
+  <!-- categories: -->
+  <div class="flex flex-wrap">
+    <div
+      class="flex px-2 py-1 bg-blue-500 mb-1 mr-1 text-sm shadow hover:bg-blue-600"
+      *ngFor="let category of this.dbService.categoriesSig()"
+    >
+      <div class="flex-initial mr-2">
+        <fa-icon
+          [icon]="editIcon"
+          class="cursor-pointer"
+          (click)="switchSubmitMode(category)"
+          title="Edit"
+        ></fa-icon>
+      </div>
+      <div class="flex-auto">{{ category.category }}</div>
+      <div class="flex-auto ml-2">
+        <fa-icon
+          [icon]="deleteIcon"
+          class="cursor-pointer"
+          (click)="deleteCategoryHandler(category)"
+          title="Delete"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+  <!-- form categories -->
+  <form
+    type="submit"
+    class="flex flex-col"
+    [formGroup]="categoryForm"
+    (ngSubmit)="submitCategory()"
+  >
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Category title..."
+      class="input bg-gray-700 h-8 p-1 mb-1 text-sm active:border-none"
+    />
+    <button
+      *ngIf="categoryFormMode == 'Submit'; else updateButton"
+      class="btn btn-green text-sm rounded-none"
+      [disabled]="!this.categoryForm.valid"
+      type="submit"
+    >
+      {{ categoryFormMode }}
+    </button>
+    <ng-template #updateButton>
+      <div class="flex flex-wrap content-between">
+        <button
+          class="btn btn-gray text-sm rounded-none"
+          type="submit"
+          [disabled]="!this.categoryForm.valid"
+        >
+          {{ categoryFormMode }}
+        </button>
+        <button
+          class="btn btn-gray text-sm rounded-none"
+          (click)="resetForm()"
+          type="submit"
+        >
+          Cancel
+        </button>
+      </div>
+    </ng-template>
+  </form>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { DbService } from './services/db.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AngularSignalYT';
+  title = 'Angular App With Signal Feature';
+  constructor(public authService: AuthService, public dbService: DbService) {
+    this.dbService.findAllCategories()
+  }
 }

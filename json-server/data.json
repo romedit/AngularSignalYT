@@ -1,0 +1,99 @@
+{
+  "signup": [
+    {
+      "id": "de10",
+      "email": "roman.hlyeba@res-it.com",
+      "password": "123456"
+    },
+    {
+      "id": "9e52",
+      "email": "roman.hlyeba@res-it.com",
+      "password": "123456"
+    }
+  ],
+  "categories": [
+    {
+      "category": "Gardening",
+      "id": "4"
+    },
+    {
+      "id": "d541",
+      "category": "Toys"
+    },
+    {
+      "id": "2a9d",
+      "category": "Food"
+    },
+    {
+      "id": "0c2c",
+      "category": "Supplies"
+    },
+    {
+      "id": "65b3",
+      "category": "Weapons"
+    },
+    {
+      "id": "d13f",
+      "category": "Beverage"
+    },
+    {
+      "id": "7812",
+      "category": "Digitals"
+    },
+    {
+      "id": "9812",
+      "category": "Electronics"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "84d2",
+      "title": "ResSuite Support",
+      "amount": 29000,
+      "category": "7812",
+      "type": "income"
+    },
+    {
+      "id": "b995",
+      "title": "Intellij Licence\t",
+      "amount": 999,
+      "category": "7812",
+      "type": "outcome"
+    },
+    {
+      "id": "8278",
+      "title": "Auto leasing",
+      "amount": 4000,
+      "category": "d541",
+      "type": "outcome"
+    },
+    {
+      "id": "05cc",
+      "title": "Apple iPhone 13 Mini",
+      "amount": 699,
+      "category": "9812",
+      "type": "outcome"
+    },
+    {
+      "id": "b8df",
+      "title": "HP Probook G9",
+      "amount": 799,
+      "category": "9812",
+      "type": "outcome"
+    },
+    {
+      "id": "aa99",
+      "title": "Apple MacBook Pro Late 2023 15'",
+      "amount": 2399,
+      "category": "9812",
+      "type": "outcome"
+    },
+    {
+      "id": "3a7d",
+      "title": "ResSuite Consulting Yearly",
+      "amount": 190000,
+      "category": "7812",
+      "type": "income"
+    }
+  ]
+}

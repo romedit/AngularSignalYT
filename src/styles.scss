@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-neutral-900;
+    }
+
+    td {
+        @apply px-4 py-2 text-sm;
+    }
+}
+
+@layer components {
+    .input {
+        @apply rounded-sm text-sm border-transparent bg-slate-700 p-2 outline-none border to-blue-800 focus:border-blue-500;
+    }
+
+    .btn {
+        @apply text-sm py-2 px-4 rounded-sm text-white transition-colors disabled:bg-gray-700 disabled:cursor-not-allowed;
+    }
+}
+
+@layer utilities {
+    .btn-green {
+        @apply bg-green-500 hover:bg-green-500 active:bg-green-800;
+    }
+
+    .btn-red {
+        @apply bg-red-600 hover:bg-red-500 active:bg-red-700;
+    }
+
+    .btn-gray {
+        @apply bg-gray-500 hover:bg-gray-400 active:bg-gray-700
+    }
+}
+
+@import 'ngx-toastr/toastr';
+
+.ngx-pagination .current:hover {
+    @apply bg-slate-400 text-white;
+}

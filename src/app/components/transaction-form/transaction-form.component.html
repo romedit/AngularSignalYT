@@ -1,0 +1,54 @@
+<form class="grid gap-2" [formGroup]="form" (ngSubmit)="submitForm()">
+  <span class="grid gap-1 text-sm" for="titleInput">Title</span>
+  <input
+    type="text"
+    formControlName="title"
+    class="input"
+    placeholder="Title..."
+  />
+  <span class="grid gap-1 text-sm" for="amountInput">Amount</span>
+  <input
+    type="number"
+    formControlName="amount"
+    class="input"
+    placeholder="0.00"
+  />
+  <span class="grid gap-1 text-sm">Category</span>
+  <select class="input" formControlName="category">
+    <option
+      *ngFor="let category of dbService.categoriesSig()"
+      class="cursor-pointer"
+      [value]="category.id"
+    >
+      {{ category.category }}
+    </option>
+  </select>
+  <div class="flex flex-wrap">
+    <div class="flex items-center gap-4">
+      <label class="flex cursor-pointer items-center gap-2 mr-5">
+        <input
+          class="form-radio text-blue-600"
+          type="radio"
+          value="income"
+          formControlName="type"
+          required
+        />
+        <span class="text-sm">Income</span></label
+      >
+    </div>
+    <div class="flex items-center">
+      <label class="flex cursor-pointer items-center gap-2">
+        <input
+          class="form-radio text-blue-600"
+          type="radio"
+          value="outcome"
+          formControlName="type"
+          required
+        /><span class="text-sm">Outcome</span>
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-green" [disabled]="!this.form.valid">
+    Submit
+  </button>
+</form>
